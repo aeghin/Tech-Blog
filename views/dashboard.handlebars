@@ -1,0 +1,22 @@
+{{#if posts.length}}
+    <h2>Your Posts</h2>
+    <ol>
+        {{#each posts as |post|}}
+        <ul>
+            <article class="card">
+                <div class="card-header flex-row justify-space-between">
+                    <a href="/post/{{id}}">{{title}}</a>
+                </div>
+                <div class="meta flex-row justify-space-between">
+                    Posted by {{user.username}} on {{format_date created_at}}
+                    <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+                </div>
+            </article>
+        </ul>
+        {{/each}}
+    </ol>
+{{/if}}
+
+<div>
+    <button type="submit" class="btn"><a class="btn-a" href="/dashboard/newpost">Create New Post</a></button>
+</div>
